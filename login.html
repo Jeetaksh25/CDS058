@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles1.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script defer src="script.js"></script> 
+    <title>Uni Wallet</title>
+</head>
+<body>
+    <div class="MainC" align="center">
+        <div>
+            <div class="Title">ElevateU</div>
+            <div class="welcome">Login</div> 
+        </div>
+
+        <div align="center" class="LoginC">
+            <div><input type="password" class="passkey" id="passkey" placeholder="Enter your passkey"></div>
+            <div class="LButton">
+                <div><button class="Login" id="loginButton">Login</button></div>
+                <div><button class="Login" id="registerButton">Register</button></div>
+            </div>
+        <div id="g_id_onload"
+            data-client_id="524369146842-kf4bvuk51ftrguna5n2t7ihgf6muuqjt.apps.googleusercontent.com"
+            data-context="signin"
+            data-ux_mode="popup"
+            data-callback="handleCredentialResponse"
+            data-auto_select="true">
+       </div>
+       
+       <div class="g_id_signin"
+            data-type="standard"
+            data-shape="rectangular"
+            data-theme="outline"
+            data-text="continue_with"
+            data-size="large"
+            data-logo_alignment="left" style="width: 200px; margin: 30px auto; height: 100px; border-radius: 20px;">
+       </div>
+       
+            <div id="error-message" style="color: red; margin-top: 10px;"></div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    const predefinedPasskey = "12345";
+
+const loginButton = document.getElementById('loginButton');
+const registerButton = document.getElementById('registerButton');
+const passkeyInput = document.getElementById('passkey');
+const errorMessage = document.getElementById('error-message');
+
+loginButton.addEventListener('click', function () {
+    const enteredPasskey = passkeyInput.value;
+
+    if (enteredPasskey === predefinedPasskey) {
+        window.location.href = 'homepage.html'; 
+    } else {
+        alert("Incorrect passkey. Please try again.");
+    }
+});
+
+registerButton.addEventListener('click', function () {
+    window.location.href = 'Register.html'; 
+});
+function handleCredentialResponse(response) {
+    console.log("Encoded JWT ID token: " + response.credential);
+    window.location.href = 'Home.html';
+}
+
+</script>
+
+<style>
+    body {
+    background-image: url("https://img.freepik.com/free-vector/gradient-dynamic-blue-lines-background_23-2148995756.jpg?t=st=1726903225~exp=1726906825~hmac=45d93f6c6d24c3f01ee7ecf5f4202d3bb1b2e3c5e87b98634da5dd244b099b2c&w=1380") ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 100%;
+}
+.Title {
+    font-size: 100px;
+    color: black;
+    background-color: aliceblue;
+    width: 60%;
+    margin-top: 50px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    font-family:fantasy;
+    font-weight: 200;
+    box-shadow: 0px 0px 20px;
+}
+.welcome {
+    font-size: 80px;
+    color: black;
+    background-color: aliceblue;
+    width: 60%;
+    margin-bottom: 70px;
+    border-radius: 30px;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 200;
+    margin-top: 30px;
+    box-shadow: 0px 0px 20px;
+}
+
+.LoginC {
+    margin: 200px auto;
+    background-color: rgba(148, 140, 140, 0.434);
+    width: 60%;
+    height: 500px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0px 0px 20px;
+}
+.passkey {
+    margin: 90px auto 80px auto;
+    height: 100px;
+    width: 800px;
+    border-radius: 30px;
+    font-size: 40px;
+    text-align: center;
+    background-color: rgb(173, 217, 255);
+    box-shadow: 0px 0px 20px rgb(0, 0, 0);
+    border: none;
+    outline: none;
+}
+.passkey:focus {
+    background-color: rgb(241, 241, 241);
+    scale: 1.1;
+    border: none;
+    outline: none;
+    box-shadow: 0px 0px 30px rgb(255, 255, 255);
+}
+
+.LButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.Login {
+    font-size: 50px;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    border-radius: 30px;
+    background-color: rgb(173, 217, 255);
+    width: 300px;
+    height: 100px;
+    transition: 0.3s;
+    box-shadow: 0px 0px 20px white;
+    border: none;
+}
+.Login:hover {
+    scale: 1.1;
+    box-shadow: 0px 0px 30px white;
+    background-color: rgb(255, 255, 255);
+}
+.Login:active {
+    scale: 0.9;
+    box-shadow: 0px 0px 10px white;
+    background-color: rgb(255, 255, 255);
+}
+
+
+</style>
