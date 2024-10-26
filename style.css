@@ -21,6 +21,8 @@ html {
                       radial-gradient(at 38% 23%, hsla(212, 73%, 59%, 1) 0%, hsla(212, 73%, 59%, 0) 100%), 
                       radial-gradient(at 15% 95%, hsla(0, 0%, 100%, 1) 0%, hsla(0, 0%, 100%, 0) 100%), 
                       radial-gradient(at 78% 52%, hsla(293, 96%, 39%, 1) 0%, hsla(293, 96%, 39%, 0) 100%);
+
+z-index: 1;
 }
 
 .NavigationB nav {
@@ -190,6 +192,7 @@ html {
     height: auto;
     border-radius: 20px;
     transition: 0.3s all ease-in-out;
+    z-index: 0;
 }
 
 .Quotes:hover {
