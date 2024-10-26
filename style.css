@@ -22,7 +22,7 @@ html {
                       radial-gradient(at 15% 95%, hsla(0, 0%, 100%, 1) 0%, hsla(0, 0%, 100%, 0) 100%), 
                       radial-gradient(at 78% 52%, hsla(293, 96%, 39%, 1) 0%, hsla(293, 96%, 39%, 0) 100%);
 
-z-index: 1;
+    z-index: 1;
 }
 
 .NavigationB nav {
