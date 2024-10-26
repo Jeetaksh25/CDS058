@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.NavigationB {
+    position:fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-image: radial-gradient(at 19% 89%, hsla(210, 100%, 20%, 1) 0%, hsla(210, 100%, 20%, 0) 100%), 
+                      radial-gradient(at 38% 23%, hsla(212, 73%, 59%, 1) 0%, hsla(212, 73%, 59%, 0) 100%), 
+                      radial-gradient(at 15% 95%, hsla(0, 0%, 100%, 1) 0%, hsla(0, 0%, 100%, 0) 100%), 
+                      radial-gradient(at 78% 52%, hsla(293, 96%, 39%, 1) 0%, hsla(293, 96%, 39%, 0) 100%);
+}
+
+.NavigationB nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.navI, .loginsign {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.NavigationB nav ul li {
+    border-radius: 1em;
+    padding: 10px;
+}
+
+.navI li, .loginsign li {
+    position: relative;
+}
+
+.navI li a, .loginsign li a {
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem;
+    transition: color 0.3s;
+}
+
+.NavigationB nav ul li:hover {
+    scale: 1.1;
+    transition: scale 0.2s;
+}
+
+.NavigationB nav ul li a:hover {
+    color: orange;
+}
+
+.NavigationB nav .loginsign li:hover {
+    background-color: rgb(255, 94, 0);
+}
+
+.NavigationB nav .loginsign li:hover a {
+    color: white;
+}
+
+.frontupMC {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly; 
+    gap: 10rem;
+    max-width: 80%;
+    background-color: rgb(163, 203, 255);
+    padding-top: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 2rem;
+    margin: auto;
+    border-radius: 8px;
+}
+
+.frontupL, .frontupR {
+    width: 50%; 
+}
+
+.frontupL {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.frontupL h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.frontupR img {
+    max-width: 100%;
+    height: auto;
+}
+
+.Scroll1 {
+    background-color: rgb(255 , 94, 0);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 40px;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.Scroll1:hover {
+    background-color: rgb(200, 74, 0);
+}
+
+
+.KeyfeaturesC {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 5px auto;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+
+
+}
+
+.Keyfeature {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    height: auto;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.Keyfeature div p {
+    box-sizing: border-box;
+    width: 16rem;
+    height: 1rem;
+    margin: 10px auto;
+    font-family: 'Text';
+    font-size: 27px;
+    color: #383838;
+    text-align: center;
+    font-weight: 800;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.imgKF {
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.imgKF:hover {
+    box-shadow: 0px 0px 30px white;
+}
+
+.Keyfeature:hover {
+    scale: 1.1;
+}
