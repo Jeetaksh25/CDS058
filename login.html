@@ -1,18 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles1.css">
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <script defer src="script.js"></script> 
-    <title>Uni Wallet</title>
+    <title>ElevateU</title>
 </head>
 <body>
     <div class="MainC" align="center">
         <div>
             <div class="Title">ElevateU</div>
-            <div class="welcome">Login</div> 
+            <div class="welcome">Connect with us</div> 
         </div>
 
         <div align="center" class="LoginC">
@@ -45,31 +43,26 @@
 </html>
 
 <script>
-    const predefinedPasskey = "12345";
+const predefinedPasskey="12345";
 
-const loginButton = document.getElementById('loginButton');
-const registerButton = document.getElementById('registerButton');
-const passkeyInput = document.getElementById('passkey');
-const errorMessage = document.getElementById('error-message');
+const loginButton=document.getElementById('loginButton');
+const registerButton=document.getElementById('registerButton');
+const passkeyInput=document.getElementById('passkey');
+const errorMessage=document.getElementById('error-message');
 
 loginButton.addEventListener('click', function () {
-    const enteredPasskey = passkeyInput.value;
+    const enteredPasskey=passkeyInput.value;
 
-    if (enteredPasskey === predefinedPasskey) {
-        window.location.href = 'homepage.html'; 
+    if (enteredPasskey===predefinedPasskey) {
+        window.location.href='Home.html'; 
     } else {
         alert("Incorrect passkey. Please try again.");
     }
 });
 
 registerButton.addEventListener('click', function () {
-    window.location.href = 'Register.html'; 
+    window.location.href='Register.html'; 
 });
-function handleCredentialResponse(response) {
-    console.log("Encoded JWT ID token: " + response.credential);
-    window.location.href = 'Home.html';
-}
-
 </script>
 
 <style>
@@ -165,6 +158,4 @@ function handleCredentialResponse(response) {
     box-shadow: 0px 0px 10px white;
     background-color: rgb(255, 255, 255);
 }
-
-
 </style>
