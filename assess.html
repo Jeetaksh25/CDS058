@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="quizscript.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <title>Stream Selection Quiz</title>
     <style>
@@ -11,11 +10,11 @@
             display: flex;
             flex-direction: column; 
             align-items: flex-start; 
-            background: rgb(109, 255, 243);
+            background-color: rgba(255, 255, 255, 0.176);
             padding: 50px;
             border-radius: 20px;
             box-shadow: 0 px 20px rgba(0, 0, 0, 0.1);
-            margin-top: 11rem;
+            margin-top: 4rem;
             margin-left: auto;
             margin-right: auto;
             width: 80%;
@@ -24,18 +23,20 @@
         .option {
             display: block;
             margin: 30px 0;
-            padding: 25px;
+            padding: 30px;
             color: rgb(0, 0, 0);
-            background-color:rgb(109, 255, 243) ;
+            background-color: rgba(255, 255, 255, 0.267);
             border: none;
             border-radius: 30px;
             cursor: pointer;
             transition: 0.3s;
-            font-size: 20px;
+            font-size: 25px;
             border: 2px solid rgb(0, 0, 0);
         }
         .option:hover {
             scale: 1.1;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0px 0px 20px rgb(255, 255, 255);
         }
 
         .question-container {
@@ -45,16 +46,21 @@
         }
 
         #next-button, .next-button {
+            position: absolute;
+            left: 50%;
+            top: 70%;
+            transform: translateX(-50%);
             display: block;
-            font-size: 20px;
+            font-size: 25px;
             padding: 20px 30px;
-            background-color: #007bff;
+            background-color: #007BFF;
             color: #fff;
             border: none;
             border-radius: 20px;
             cursor: pointer;
-            margin: 20px auto; 
+            margin: 0px auto; 
             transition: all 0.3s ease;
+            box-sizing: border-box;
         }
 
         #next-button:hover {
@@ -92,6 +98,9 @@
             </ul>
         </nav>
     </header>
+
+    
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 10rem; font-size: 45px; font-weight: 600;">Assessment</div>
     <div class="quiz-container" id="quiz-container">
         <div class="question-container" id="question-container">
             <h2 id="question"></h2>

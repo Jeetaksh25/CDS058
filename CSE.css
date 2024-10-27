@@ -13,9 +13,7 @@ body {
     width: 90%;
     height: 10%;
     margin: 0 auto;
-    padding: 35px;
-   
-    
+    padding: 35px;  
 }
 
 .container2 {
@@ -23,15 +21,16 @@ body {
     height: 10%;
     margin: 0 auto;
     padding: 35px;
-   
     
 }
 
 .banner {
-    background: linear-gradient(90deg, #f39c12, #f1c40f);
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.267);
     color: rgb(245, 238, 238);
     padding: 20px;
     text-align: center;
+    justify-content: center;
     border-radius: 15px;
 }
 
