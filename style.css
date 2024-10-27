@@ -15,13 +15,9 @@ html {
     align-items: center;
     justify-content: space-between;
     padding: 1rem 2rem;
-    font-size: 1.6rem;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-image: radial-gradient(at 19% 89%, hsla(210, 100%, 20%, 1) 0%, hsla(210, 100%, 20%, 0) 100%), 
-                      radial-gradient(at 38% 23%, hsla(212, 73%, 59%, 1) 0%, hsla(212, 73%, 59%, 0) 100%), 
-                      radial-gradient(at 15% 95%, hsla(0, 0%, 100%, 1) 0%, hsla(0, 0%, 100%, 0) 100%), 
-                      radial-gradient(at 78% 52%, hsla(293, 96%, 39%, 1) 0%, hsla(293, 96%, 39%, 0) 100%);
-
+    font-size: 1.3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
     z-index: 1;
 }
 
@@ -29,6 +25,8 @@ html {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    min-height: max-content;
+    padding: 10px;
 }
 
 .navI, .loginsign {
@@ -51,6 +49,7 @@ html {
     color: white;
     padding: 0.5rem;
     transition: color 0.3s;
+    padding: 20px;
 }
 
 .NavigationB nav ul li:hover {
@@ -59,11 +58,12 @@ html {
 }
 
 .NavigationB nav ul li a:hover {
-    color: orange;
+    box-shadow: 0px 0px 20px white;
+    border-radius: 40px;
 }
 
 .NavigationB nav .loginsign li:hover {
-    background-color: rgb(255, 94, 0);
+    scale: 1.1;
 }
 
 .NavigationB nav .loginsign li:hover a {
@@ -79,10 +79,10 @@ html {
     max-width: 80%;
     background-color: rgb(165, 225, 255);
     padding-top: 2rem;
+    padding-bottom: 2rem;
     padding-left: 3rem;
     padding-right: 3rem;
-    padding-bottom: 2rem;
-    margin: 6rem auto;
+    margin: 10hrem auto;
     border-radius: 20px;
 }
 
@@ -282,7 +282,7 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 40px auto;
+    margin: 20px auto;
     row-gap: 20px;
     background-color: rgb(163, 203, 255);
     width: max-content;
