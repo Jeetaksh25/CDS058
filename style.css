@@ -1,6 +1,5 @@
 html {
     scroll-behavior: smooth;
-    background-image: url("https://img.freepik.com/free-vector/spot-lights-background-concept_23-2148661853.jpg?t=st=1730057720~exp=1730061320~hmac=e24c8f030a187b06990bc61b88dd99580e88d1ba72475dc5ef84798e848cd6ca&w=1380");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -395,14 +394,12 @@ html {
     box-shadow: 0px 0px 20px rgb(255, 255, 255);
 }
 
-
-
 body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-image: url("https://img.freepik.com/free-vector/spot-lights-background-concept_23-2148661853.jpg?t=st=1730057720~exp=1730061320~hmac=e24c8f030a187b06990bc61b88dd99580e88d1ba72475dc5ef84798e848cd6ca&w=1380");
+    background-image: url("images/bg2.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
