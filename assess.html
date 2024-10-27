@@ -581,13 +581,25 @@
             resultContainer.style.display = 'block';
 
             let result;
-            if (totalScore >= 80 && totalScore <= 110) {
+            if (totalScore >= 240 && totalScore <= 350) {
                 result = "You should consider pursuing Science (Non-Med).";
-            } else if (totalScore >= 60 && totalScore <= 79) {
+            }
+            else if (totalScore >= 240 && totalScore <= 280) {
+                result= "You should consider pursuing PCMB.";
+            } 
+            else if (totalScore >= 180 && totalScore <= 280) {
                 result = "You should consider pursuing Science (Med).";
-            } else if (totalScore >= 40 && totalScore <= 59) {
+            }
+            else if (totalScore >= 180 && totalScore <= 230) {
+                result = "You should consider pursuing Science with Commerce or take extra subjects as per your interest.";
+            } 
+            else if (totalScore >= 130 && totalScore <= 230) {
                 result = "You should consider pursuing Commerce.";
-            } else if (totalScore >= 20 && totalScore <= 39) {
+            }
+            else if (totalScore >= 130 && totalScore <= 200) {
+                result = "You should consider pursuing Commerce with Humanities or take extra subjects as per your interest.";
+            } 
+            else if (totalScore >= 100 && totalScore <= 200) {
                 result = "You should consider pursuing Humanities.";
             }
             resultContainer.textContent = result;
