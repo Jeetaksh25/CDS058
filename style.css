@@ -75,7 +75,7 @@ html {
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly; 
-    gap: 10rem;
+    gap: 8rem;
     max-width: 80%;
     background-color: rgb(163, 203, 255);
     padding-top: 2rem;
