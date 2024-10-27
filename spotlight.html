@@ -7,11 +7,17 @@
     <title>Document</title>
     <style>
         .div {
-            margin-top: 10px;
+            margin-top: 20px;
             background-color: rgb(236, 230, 230);
             display: grid;
-            grid-template-columns: 500px auto;
+            grid-template-columns: 300px auto;
             grid-column-gap: 100px;
+            width: 100%;
+            border-top-right-radius: 100%;
+            border-bottom-right-radius: 100%;
+            border-top-left-radius: 350px;
+            border-bottom-left-radius: 350px;
+            padding-bottom: 30px;
         }
 
         #divitem1,
@@ -20,15 +26,26 @@
         }
 
         #divitem2 {
-            margin-top: 140px;
+            margin-top: 50px;
+            margin-right: 160px;
+            margin-left: 150px;
+        }
+
+        #divitem1 {
+            margin-left: 150px;
         }
 
         .divv {
-            margin-top: 10px;
+            margin-top: 20px;
             background-color: rgb(236, 230, 230);
             display: grid;
             grid-template-columns: auto 500px;
             grid-column-gap: 100px;
+            border-top-left-radius: 100%;
+            border-bottom-left-radius: 100%;
+            border-top-right-radius: 350px;
+            border-bottom-right-radius: 350px;
+            padding-bottom: 30px;
         }
 
         #divvitem1,
@@ -37,13 +54,38 @@
         }
 
         #divvitem2 {
-            margin-left: 10px;
-            margin-top: 140px;
+            margin-left: 160px;
+            margin-top: 50px;
         }
 
         img {
             border-radius: 100%;
+            -webkit-filter: drop-shadow(1px 1px 5px #000);
+            filter: drop-shadow(0px 0px 10px #ffffff);
+            height: 300px;
+            width: 300px;
         }
+
+        p {
+            text-align-last: center;
+            text-align: justify;
+            font-size: 14px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        h2 {
+            color: black;
+            text-shadow: 2px 2px 5px rgb(39, 37, 37);
+            font-size: 21px;
+            text-align: center;
+            font-family: monospace;
+        }
+        img:hover{
+                    scale:1.1;
+                    transition: 2s;
+        }
+       
+
     </style>
 </head>
 
@@ -51,17 +93,25 @@
     <div id="Recommendation">
         <div class="div">
             <div id="divitem1">
-                <img src="https://raw.githubusercontent.com/Jeetaksh25/CDS058/refs/heads/main/images/Sandeepjain.jpg" alt="" id="clothbag" style="padding-bottom: 30px;"> 
+                <img src="https://raw.githubusercontent.com/Jeetaksh25/CDS058/refs/heads/main/images/Sandeepjain.jpg" alt="" id="clothbag">
             </div>
             <div id="divitem2">
                 <h2>SANDEEP JAIN</h2>
-                <p style="font-size: 20px;">Sandeep Jain's journey from a software developer to the founder of GeeksforGeeks showcases the power
+                <p>The CEO and founder of GeeksforGeeks is Sandeep Jain. Established in 2009, GeeksforGeeks has grown
+                    under his leadership to become a leading online education platform offering resources in
+                    programming, computer science, and interview preparation.
+
+                    Sandeep Jain’s journey includes facing setbacks, one of which was his <b> failure to clear the
+                        JEE&nbsp;(Joint Entrance Examination),
+
+                    </b> a highly competitive test for engineering colleges in India. This failure,
+                    however, motivated him to keep learning and later inspired him to help others who struggle with
+                    academics and technical skills.
+                    Sandeep Jain's journey from a software developer to the founder of GeeksforGeeks showcases the power
                     of passion and vision. Despite having a successful career at D.E. Shaw, he shifted to teaching,
                     driven by a desire to make quality coding education accessible. Starting as a blog to share
                     programming insights, GeeksforGeeks has grown into a global edtech platform under his leadership,
                     providing articles, practice problems, and courses that support millions of learners worldwide.
-                    Sandeep’s story is a testament to how dedication and a mission-driven approach can create lasting
-                    impact in the world of education.
                 </p>
             </div>
         </div>
@@ -70,22 +120,83 @@
         <div class="divv">
             <div id="divvitem2">
                 <h2>SUNDAR PICHAI</h2>
-                <p style="font-size: 20px;">Sundar Pichai, born Pichai Sundararajan in 1972 in Madurai, India, is the CEO of Alphabet Inc. and
+                <p>Sundar Pichai, born Pichai Sundararajan in 1972 in Madurai, India, is the CEO of Alphabet Inc. and
                     its subsidiary, Google LLC. Growing up in a modest family in Chennai, he excelled in academics,
-                    earning a degree in Metallurgical Engineering from the Indian Institute of Technology (IIT)
-                    Kharagpur. Pichai then pursued an M.S. from Stanford University and an MBA from the Wharton School
+                    earning a degree in Metallurgical Engineering from the <b> Indian Institute of Technology
+                        Kharagpur </b>. Pichai then pursued an M.S. from Stanford University and an MBA from the Wharton
+                    School
                     of the University of Pennsylvania.
 
                     He joined Google in 2004, initially working on the Google Toolbar and later the Chrome browser,
-                    which became a massive success. His innovative contributions led to his appointment as Google's CEO
-                    in 2015, and in 2019, he became the CEO of Alphabet as well. Known for his strategic vision,
+                    which became a massive success. His innovative contributions led to his <b> appointment as Google's
+                        CEO
+                        in 2015, and in 2019, he became the CEO of Alphabet as well</b>. Known for his strategic vision,
                     humility, and focus on technological advancement, Pichai has played a key role in developing
                     products like Google Chrome, Chrome OS, and Android, as well as in leading Google’s efforts in AI
                     and machine learning.
                 </p>
             </div>
             <div id="divvitem1">
-                <img src="https://raw.githubusercontent.com/Jeetaksh25/CDS058/refs/heads/main/images/Sundar%20Pichai.jpg" alt="" id="clothbag" style="padding-bottom: 30px;">
+                <img src="https://raw.githubusercontent.com/Jeetaksh25/CDS058/refs/heads/main/images/Sundar%20Pichai.jpg" alt="" id="clothbag">
+            </div>
+        </div>
+
+
+
+        <div class="div">
+            <div id="divitem1">
+                <img src="https://raw.githubusercontent.com/Jeetaksh25/CDS058/refs/heads/main/images/Dhirubhai%20Ambani.jpg" alt="" id="clothbag">
+            </div>
+            <div id="divitem2">
+                <h2>Dhirubhai Ambani</h2>
+                <p>Dhirubhai Ambani, born in 1932 in Gujarat, began his journey in Yemen as a gas station attendant.
+                    Returning to India in 1958, he founded Reliance as a small textile trading firm. Starting with
+                    limited capital, he grew Reliance into a leading company, pioneering affordable textiles with the
+                    "Vimal" brand. Dhirubhai revolutionized Indian business by making Reliance one of the first public
+                    companies, attracting everyday investors. He later expanded into petrochemicals, plastics, and
+                    telecom, building Reliance into a powerhouse. Known for his vision and resilience, he inspired a new
+                    wave of Indian entrepreneurship.
+                </p>
+            </div>
+        </div>
+
+
+
+
+        <div class="divv">
+            <div id="divvitem2">
+                <h2>SUNDAR PICHAI</h2>
+                <p> Born on May 14, 1984, in White Plains, New York, Zuckerberg showed an early aptitude for programming
+                    and technology. As a student at Harvard University, he developed “The Facebook” in 2004 with friends
+                   <b> Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes,</b> initially as a social network
+                    for college students. The platform quickly gained popularity and expanded beyond universities,
+                    transforming into a global phenomenon.
+
+                    Zuckerberg dropped out of Harvard to focus on Facebook full-time, relocating to Silicon Valley.
+                </p>
+            </div>
+            <div id="divvitem1">
+                <img src="mark.png" alt="" id="clothbag">
+            </div>
+        </div>
+
+
+        <div class="div">
+            <div id="divitem1">
+                <img src="https://raw.githubusercontent.com/Jeetaksh25/CDS058/refs/heads/main/images/Dhirubhai%20Ambani.jpg" alt="" id="clothbag">
+            </div>
+            <div id="divitem2">
+                <h2>Dhirubhai Ambani</h2>
+                <p>Narendra Modi’s journey is a story of perseverance and ambition, rising from humble beginnings to
+                    lead India as its Prime Minister. Born on September 17, 1950, in Vadnagar, Gujarat, Modi helped his
+                    family by selling tea at a railway station in his early years. He joined the Rashtriya Swayamsevak
+                    Sangh (RSS) as a young man.Through his hard work, Modi advanced within the Bharatiya Janata Party
+                    (BJP), eventually becoming Chief Minister of Gujarat in 2001. In 2014, Modi ran for Prime Minister
+                    on a platform of economic development, modernization, and anti-corruption, leading the BJP to a
+                    historic victory Since then, he has faced multiple challenges but has remained focused on economic
+                    reforms, international relations, and initiatives like <b> "Make in India" </b> and <b> "Digital
+                        India"</b>.
+                </p>
             </div>
         </div>
 
