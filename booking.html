@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Video Call Booking</title>
+</head>
+<body>
+    <div class="booking-container">
+        <h2>Book Your Video Call</h2>
+        <form id="booking-form">
+            <label for="date" style="">Select Date:</label>
+            <input type="date" id="date" name="date" required>
+            <label for="time">Select Time:</label>
+            <input type="time" id="time" name="time" required>
+            <label for="background">Background/Topic:</label>
+            <select id="background" name="background" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="career-guidance">Career Guidance</option>
+                <option value="project-discussion">Career Change</option>
+                <option value="alumni-connect">Alumni Connect</option>
+                <option value="general-discussion">General Discussion</option>
+            <label for="notes">Additional Notes:</label>
+            <textarea id="notes" name="notes" placeholder="Provide addition information" style="font-family: Arial, Helvetica, sans-serif;"></textarea>
+            <button type="submit">Book Now</button>
+        </form>
+        <div id="join-container" style="display: none;">
+            <button id="join-call">Join Video Call</button>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+<script>
+    document.getElementById("booking-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    alert("Booking confirmed! You can now join the call.");
+    document.getElementById("join-container").style.display = "block";
+});
+document.getElementById("join-call").addEventListener("click", function() {
+    alert("Joining the video call...");
+    window.location.href="https://meet.google.com/rfj-qyey-wvq"
+});
+</script>
+
+<style>
+    body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+</style>

@@ -323,32 +323,133 @@ html {
     justify-content: space-between;
     align-items: center;
     margin-top: 30px;
-    margin-left: 32px;
+    margin-left: auto;
     margin-right: auto;
     height: auto;
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
-    column-gap: 19rem;
+    column-gap: 18rem;
 }
 
-.Cbutton {
+.CButton {
+    display: inline-block;
     padding: 15px 25px;
-    border: unset;
-    border-radius: 40px;
-    color: #212121;
-    z-index: 1;
-    background: #e8e8e8;
-    position: relative;
-    font-weight: 1000;
-    font-size: 20px;
-    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-    transition: all 250ms;
-    overflow: hidden;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    width: 180px;
+
 }
 
-.Cbutton:hover {
-    transform: scale(1.1);
-    color: #e8e8e8;
-    box-shadow: 0px 0px 30px rgb(255, 255, 255);
+.CButton:hover {
+    scale: 1.1;
+    box-shadow: 0px 0px 20px rgb(255, 255, 255);
+}
+
+.hover-info {
+    position: absolute;
+    display: none;
+    font-size: 25px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    width: 250px;
+    text-align: center;
+    top: 20%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.alumni-info {
+    left: 14%; 
+}
+
+.guide-info {
+    right: 1%;
+}
+
+.Cleft:hover .alumni-info, .Cright:hover .guide-info {
+    display: block;
+}
+
+
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.booking-container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width:max-content;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    min-width: 25rem;
+}
+
+label {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+input, select, textarea {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 20px;
+}
+
+textarea {
+    resize: both;
+    min-height: 10rem;
+    min-width: 25rem;
+}
+
+button {
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#join-call {
+    margin-top: 1rem;
+    width: 100%;
+    background-color: #28a745;
+}
+
+#join-call:hover {
+    background-color: #218838;
 }

@@ -7,28 +7,39 @@
     <title>Connect</title>
 </head>
 <body>
-    <div style=" display: flex; flex-direction: column; font-size: 55px; font-weight: 800; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; padding-top: 50px;" align="center">Connect</div>
+    <div style="display: flex; flex-direction: column; font-size: 55px; font-weight: 800; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; padding-top: 50px;" align="center">Connect</div>
     <div class="MainC">
         <div class="Ctop">
-            <div class="Cleft"><img src="images/Alumni.webp" alt="" width="300px" style="border-radius: 15px;">
-                <div style=" display: flex; flex-direction: column; font-size: 30px; margin-top: 10px; justify-content: center; align-items: center; width: 100%; box-sizing: border-box;">Alumni</div>
+            <div class="Cleft">
+                <img src="images/Alumni.webp" alt="" width="300px" style="border-radius: 15px;">
+                <div style="display: flex; flex-direction: column; font-size: 30px; margin-top: 20px; justify-content: center; align-items: center; width: 100%; box-sizing: border-box;">Alumni</div>
+                <div class="hover-info alumni-info">Reconnect with past graduates to explore mentorship and networking opportunities.</div>
             </div>
             <div class="Cright">
                 <img src="images/guide.jpg" alt="" width="300px" style="border-radius: 15px;">
-                <div style=" display: flex; flex-direction: column; font-size: 30px; margin-top: 10px; justify-content: center; align-items: center; width: 100%; box-sizing: border-box;">Career Guide</div>
+                <div style="display: flex; flex-direction: column; font-size: 30px; margin-top: 20px; justify-content: center; align-items: center; width: 100%; box-sizing: border-box;">Career Guide</div>
+                <div class="hover-info guide-info">Get guidance on career choices and professional growth from experienced mentors.</div>
             </div>
         </div>
-
+    
         <div class="Cbottom">
             <h1>Book Meeting with</h1>
             <div class="Cbuttons">
-                <div style="display: flex;"><button class="Cbutton"><a href="https://meet.google.com/fey-ryqa-ezb" style="text-decoration: none; color: black;">Alumni</a></button></div>
-                <div style="display: flex;"><button class="Cbutton"><a href="https://meet.google.com/fey-ryqa-ezb" style="text-decoration: none; color: black;">Career Guide</a></button></div>
-            </div>
-        </div>
-        
-
+                <a class="CButton" href="booking.html">Alumni</a>
+                <a class="CButton" href="booking.html">Guide</a>
+            </div>     
         </div>
     </div>
+    
 </body>
 </html>
+
+<style>
+    img {
+        transition: 0.3s;
+    }
+    img:hover {
+        scale: 1.1;
+        box-shadow: 0px 0px 20px black;
+    }
+</style>
