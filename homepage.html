@@ -76,6 +76,44 @@
     <h1 class="Qbody">This is a small assessment test to help you select the best stream/course according to your interest and potential.</h1>
     <div class="B"><a href="quiz.html"><button class="QButton">Click me</button></a></div>
 </div>
+
+<footer style="background-color: #1a1a1a; color: #ffffff; padding: 2rem 0; font-size: 0.9rem; margin-top: 3rem;">
+    <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-around; align-items: flex-start; width: 80%; margin: 0 auto;">
+        <div style="flex: 1; min-width: 200px; margin: 1rem;">
+            <h3 style="color: #ffcc00; margin-bottom: 1rem;">About Us</h3>
+            <p>ElevateU is dedicated to providing top-quality educational resources to help you thrive. With expert-led courses and customized learning paths, your success is our priority.</p>
+        </div>
+        <div style="flex: 1; min-width: 200px; margin: 1rem;">
+            <h3 style="color: #ffcc00; margin-bottom: 1rem;">Quick Links</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="homepage.html" style="color: #ffffff; text-decoration: none;">Home</a></li>
+                <li><a href="connect.html" style="color: #ffffff; text-decoration: none;">Connect</a></li>
+                <li><a href="assess.html" style="color: #ffffff; text-decoration: none;">Assess</a></li>
+                <li><a href="guide.html" style="color: #ffffff; text-decoration: none;">Guide</a></li>
+                <li><a href="library.html" style="color: #ffffff; text-decoration: none;">Library</a></li>
+                <li><a href="spotlight.html" style="color: #ffffff; text-decoration: none;">Spotlight</a></li>
+            </ul>
+        </div>
+        <div style="flex: 1; min-width: 200px; margin: 1rem;">
+            <h3 style="color: #ffcc00; margin-bottom: 1rem;">Contact Us</h3>
+            <p>Email: support@elevateu.com</p>
+            <p>Phone: +1-234-567-890</p>
+            <p>Address: 123 Education St., Knowledge City</p>
+        </div>
+        <div style="flex: 1; min-width: 200px; margin: 1rem;">
+            <h3 style="color: #ffcc00; margin-bottom: 1rem;">Follow Us</h3>
+            <a href="#" style="color: #ffffff; text-decoration: none; margin-right: 10px;">Facebook</a>
+            <a href="#" style="color: #ffffff; text-decoration: none; margin-right: 10px;">Twitter</a>
+            <a href="#" style="color: #ffffff; text-decoration: none; margin-right: 10px;">Instagram</a>
+            <a href="#" style="color: #ffffff; text-decoration: none;">LinkedIn</a>
+        </div>
+    </div>
+    <div style="text-align: center; padding: 1rem; background-color: #0d0d0d; font-size: 0.8rem; margin-top: 1rem;">
+        &copy; 2024 ElevateU. All rights reserved.
+    </div>
+</footer>
+
+
 </body>
 </html>
 
@@ -84,5 +122,15 @@
         const quizSection=document.getElementById("quizSection");
         quizSection.scrollIntoView({ behavior: "smooth" });
     }
+
+    const innerContainer = document.querySelector('.inner-container');
+
+    innerContainer.addEventListener('mouseenter', () => {
+        innerContainer.style.animationPlayState = 'running';
+    });
+    
+    innerContainer.addEventListener('mouseleave', () => {
+        innerContainer.style.animationPlayState = 'paused';
+    });   
 </script>
     
