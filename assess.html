@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="quizscript.js" defer></script>
+    <title>Stream Selection Quiz</title>
+    <style>
+        .quiz-container {
+            display: flex;
+            flex-direction: column; 
+            align-items: flex-start; 
+            background: rgb(109, 255, 243);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 px 20px rgba(0, 0, 0, 0.1);
+            margin: 65px auto;
+            width: 80%;
+            height: 40rem;
+        }
+        .option {
+            display: block;
+            margin: 30px 0;
+            padding: 25px;
+            color: rgb(0, 0, 0);
+            background-color:rgb(109, 255, 243) ;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 20px;
+            border: 2px solid rgb(0, 0, 0);
+        }
+        .option:hover {
+            scale: 1.1;
+        }
+
+        .question-container {
+            padding-left: 50px;
+            padding-right: 50px;
+            font-size: 30px;
+        }
+
+        #next-button, .next-button {
+            display: block;
+            font-size: 20px;
+            padding: 20px 30px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            margin: 20px auto; 
+            transition: all 0.3s ease;
+        }
+
+        #next-button:hover {
+            color: black;
+            scale: 1.1;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 20px rgb(255, 255, 255);
+        }
+
+        #result-container {
+            display: none;
+            font-size: 30px;
+            padding-left: 50px;
+            padding-right: 50px;
+            justify-content: center;
+            align-self:center;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="quiz-container" id="quiz-container">
+        <div class="question-container" id="question-container">
+            <h2 id="question"></h2>
+            <div class="options-container" id="options-container"></div>
+        </div>
+        <button id="next-button" class="next-button" onclick="nextQuestion()" style="display:none;">Next</button>
+        <div class="result-container" id="result-container" style="display:none;"></div>
+    </div>
+
+    <script>
+        const questions = [
+                {
+                question: "Which subject do you enjoy the most?",
+                options: [
+                    { text: "Math", score: 1 },
+                    { text: "Understanding biological processes", score: 3 },
+                    { text: " Economics", score: 4 },
+                    { text: "History/Geography", score: 2 }
+                ]
+            },
+            {
+                question: "How would you describe your problem-solving skills?",
+                options: [
+                    { text: "I enjoy solving complex problems and puzzles", score: 4 },
+                    { text: "I like understanding issues that relate to people’s health and biology", score: 3 },
+                    { text: "I’m good at finding solutions that make financial sense", score: 1 },
+                    { text: "I prefer exploring social issues and people’s behavior", score: 2 }
+                ]
+            },
+            {
+                question: "What type of books or articles do you prefer reading?",
+                options: [
+                    { text: "Science magazines or tech blogs", score: 4 },
+                    { text: "Health and biology-related topics", score: 1 },
+                    { text: "Business and economics news", score: 2 },
+                    { text: "History, politics, and literature", score: 3 }
+                ]
+            },
+            {
+                question: "When faced with a challenging task, how do you respond?",
+                options: [
+                    { text: "Break it down logically and tackle it step-by-step", score: 4 },
+                    { text: "Look for solutions that benefit the people around me", score: 1 },
+                    { text: "Analyze it financially or structurally", score: 2 },
+                    { text: "Think of innovative or creative ways to approach it", score: 3 }
+                ]
+            },
+            {
+                question: " Which of these is closest to your future ambition?",
+                options: [
+                    { text: "Engineer or Scientist", score: 2 },
+                    { text: "Doctor or Researcher in medical science", score: 1 },
+                    { text: "Entrepreneur, Business Analyst, or Chartered Accountant", score: 4 },
+                    { text: "Journalist, Psychologist, or Social Worker", score: 3 }
+                ]
+            },
+            {
+                question: "How do you feel about working in a lab or with technology?",
+                options: [
+                    { text: "Excited; I like experimenting and creating new things", score: 3 },
+                    { text: "Interested, especially if it involves biology", score: 4 },
+                    { text: "Neutral, I prefer working with numbers and financial data", score: 1 },
+                    { text: "Not very interested; I like working on social issues", score: 2 }
+                ]
+            },
+            {
+                question: "Which activity do you enjoy most?",
+                options: [
+                    { text: "Solving math or physics problems", score: 1 },
+                    { text: "Learning about the human body and health", score: 4 },
+                    { text: "Analyzing markets and learning how businesses work", score: 3 },
+                    { text: "Reading, writing, and discussing social issues", score: 2 }
+                ]
+            },
+            {
+                question: "How would you approach understanding a new concept?",
+                options: [
+                    { text: "By analyzing and applying logic", score: 4 },
+                    { text: "Through hands-on examples, especially if related to biology", score: 1 },
+                    { text: "By seeing its financial or business implications", score: 2 },
+                    { text: "By connecting it to historical or social contexts", score: 3 }
+                ]
+            },
+            {
+                question: "Which of these subjects do you find most interesting?",
+                options: [
+                    { text: "Physics or Mathematics", score: 3 },
+                    { text: "Biology", score: 4 },
+                    { text: "Business Studies", score: 1 },
+                    { text: "Political Science", score: 2 }
+                ]
+            },
+            {
+                question: "What’s your preferred way to learn?",
+                options: [
+                    { text: "Experiments and practicals", score: 4 },
+                    { text: "Through observing living organisms or environments", score: 1 },
+                    { text: "Real-world case studies or economic data", score: 3 },
+                    { text: "By engaging in debates or writing essays", score: 2 }
+                ]
+            },
+            {
+                question: " Which subject do you find easier to study?",
+                options: [
+                    { text: "Physics or Computer Science", score: 1 },
+                    { text: "Biology or Chemistry", score: 2 },
+                    { text: "Economics or Accountancy", score: 3 },
+                    { text: "History or Sociology", score: 4 }
+                ]
+            },
+            {
+                question: "How do you feel about memorizing facts and details?",
+                options: [
+                    { text: "I prefer understanding concepts rather than memorizing", score: 3 },
+                    { text: "I can remember details about living things, but not in other areas", score: 2 },
+                    { text: "I remember information if it’s useful for practical applications", score: 4 },
+                    { text: " I’m good at remembering dates, events, and social theories", score: 1 }
+                ]
+            },
+            {
+                question: "How do you typically spend your free time?",
+                options: [
+                    { text: "Solving puzzles or experimenting with tech", score: 2 },
+                    { text: "Watching documentaries about health or the environment", score: 4 },
+                    { text: "Following business trends or learning about finance", score: 3 },
+                    { text: "Reading or creating art", score: 1 }
+                ]
+            },
+            {
+                question: "What do you find most fulfilling in a project?",
+                options: [
+                    { text: "Building or designing something innovative", score: 3 },
+                    { text: "Finding solutions that improve people’s lives or health", score: 2 },
+                    { text: "Making a plan that is financially viable", score: 4 },
+                    { text: "Making a positive social or cultural impact", score: 1 }
+                ]
+            },
+            {
+                question: "If you could pick one superpower, what would it be?",
+                options: [
+                    { text: "Ability to solve any problem instantly", score: 2 },
+                    { text: "Ability to heal and help others", score: 1 },
+                    { text: "Ability to make sound financial decisions", score: 4 },
+                    { text: "Ability to understand people’s emotions deeply", score: 3 }
+                ]
+            },
+            {
+                question: "Which of the following topics excites you most?",
+                options: [
+                    { text: " Space exploration and the universe", score: 4 },
+                    { text: "Understanding biological processes", score: 1 },
+                    { text: "Economics, investments, and finance", score: 3 },
+                    { text: " Social justice and cultural heritage", score: 2 }
+                ]
+            },
+            {
+                question: "How do you feel about math and numbers?",
+                options: [
+                    { text: "I love math; it’s like solving puzzles", score: 1 },
+                    { text: "I prefer numbers only when they relate to biology or data", score: 4 },
+                    { text: "I’m comfortable with math, especially if related to finance", score: 3 },
+                    { text: "I find math challenging; I prefer writing and social studies", score: 2 }
+                ]
+            },
+            {
+                question: "Which of these activities appeals to you most?",
+                options: [
+                    { text: "Building or coding something new", score: 2 },
+                    { text: "Learning about plants, animals, or human health", score: 1 },
+                    { text: "Creating a business plan or financial budget", score: 3 },
+                    { text: "Writing an essay on social issues", score: 4 }
+                ]
+            },
+            {
+                question: "If you had to pick an ideal career environment, what would it be?",
+                options: [
+                    { text: "High-tech labs or engineering workshops", score: 4 },
+                    { text: "Hospitals, research labs, or clinics", score: 2 },
+                    { text: "Corporate offices or financial institutions", score: 1 },
+                    { text: "Art studios, NGOs, or journalism offices", score: 3 }
+                ]
+            },
+            {
+                question: "How would you describe your ideal project?",
+                options: [
+                    { text: "Technological, innovative, and logical", score: 1 },
+                    { text: "Related to health, nature, or biological science", score: 2 },
+                    { text: "Business-oriented, with profit and growth potential", score: 3 },
+                    { text: "Creative, socially impactful, and culture-oriented", score: 4 }
+                ]
+            },
+            {
+                question: "What do you enjoy doing in a group project?",
+                options: [
+                    { text: "Taking the lead and organizing tasks logically", score: 1 },
+                    { text: "Contributing knowledge about health or biology", score: 3 },
+                    { text: "Analyzing data and discussing financial implications", score: 4 },
+                    { text: "Bringing creative ideas and perspectives", score: 2 }
+                ]
+            },
+            {
+                question: "Which of these statements resonates with you the most?",
+                options: [
+                    { text: "I thrive on solving challenging problems and making things work", score: 4 },
+                    { text: "I want to make a difference in people’s lives through science", score: 3 },
+                    { text: "I am interested in how money and business impact society", score: 1 },
+                    { text: "I believe in understanding cultures and histories to improve society ", score: 2 }
+                ]
+            },
+            {
+                question: " How do you feel about science experiments?",
+                options: [
+                    { text: " I find them exciting and love to conduct my own", score: 4 },
+                    { text: "I enjoy them, especially if they involve biology", score: 1 },
+                    { text: "They can be interesting, but I prefer the theoretical side", score: 2 },
+                    { text: "I’m more interested in discussing the implications of the findings", score: 3 }
+                ]
+            },
+            {
+                question: "When studying, which environment do you prefer?",
+                options: [
+                    { text: "A quiet space with resources to experiment and explore", score: 4 },
+                    { text: "A space with access to books and research materials", score: 1 },
+                    { text: "A practical environment where I can analyze data", score: 2 },
+                    { text: "A collaborative space for discussion and debate", score: 3 }
+                ]
+            },
+            {
+                question: "If you could change one thing in the world, what would it be?",
+                options: [
+                    { text: "Improve technology to solve complex problems", score: 2 },
+                    { text: "Enhance healthcare access for everyone", score: 1 },
+                    { text: "Create more job opportunities and financial literacy", score: 4 },
+                    { text: "Promote understanding and acceptance of diverse cultures", score: 3 }
+                ]
+            }, //25Questions Here ________________________________________________________________________
+            {
+                question: "How important is creativity in your work?",
+                options: [
+                    { text: "Very important; I like to innovate and create", score: 3 },
+                    { text: "Important, but I prefer it within the scope of scientific inquiry", score: 4 },
+                    { text: "Somewhat important, especially in business solutions", score: 1 },
+                    { text: "Extremely important; it drives my passion", score: 2 }
+                ]
+            },
+            {
+                question: "Which type of news do you follow the most?",
+                options: [
+                    { text: "Technology and scientific breakthroughs", score: 1 },
+                    { text: "Health, medicine, and biology-related news", score: 4 },
+                    { text: "Business news and economic trends", score: 3 },
+                    { text: "Social issues and cultural stories", score: 2 }
+                ]
+            },
+            {
+                question: "How do you approach learning new information?",
+                options: [
+                    { text: "By experimenting and applying it practically", score: 4 },
+                    { text: "By studying case studies and real-life applications", score: 1 },
+                    { text: "By connecting it to financial or business concepts", score: 2 },
+                    { text: "By discussing it with others and exploring different viewpoints", score: 3 }
+                ]
+            },
+            {
+                question: "What role do you see yourself playing in a team?",
+                options: [
+                    { text: "The strategist who plans and solves problems", score: 3 },
+                    { text: "The researcher who provides knowledge", score: 4 },
+                    { text: "The analyst who evaluates data and finances", score: 1 },
+                    { text: "The creative thinker who brings new ideas", score: 2 }
+                ]
+            },
+            {
+                question: "How do you feel about public speaking?",
+                options: [
+                    { text: " I enjoy it and like sharing technical ideas", score: 4 },
+                    { text: " I’m comfortable speaking about health-related topics", score: 3 },
+                    { text: "I feel confident presenting financial information", score: 2 },
+                    { text: "I love discussing social issues and storytelling", score: 1 }
+                ]
+            },
+            {
+                question: "Which of these activities would you choose for a weekend project?",
+                options: [
+                    { text: "Building a model or coding a simple program", score: 3 },
+                    { text: "Conducting an experiment on plant growth", score: 4 },
+                    { text: "Creating a business plan for a startup idea", score: 2 },
+                    { text: "Writing a story or creating a presentation on history", score: 1 }
+                ]
+            },
+            {
+                question: "What motivates you to learn new things?",
+                options: [
+                    { text: "The possibility of inventing something new", score: 4 },
+                    { text: "Understanding how living organisms function", score: 1 },
+                    { text: "Applying knowledge to real-world financial scenarios", score: 3 },
+                    { text: "Exploring the impacts of society and culture", score: 2 }
+                ]
+            },
+            {
+                question: "How do you feel about teamwork?",
+                options: [
+                    { text: "I love collaborating to create innovative solutions", score: 3 },
+                    { text: "I prefer working in a team focused on health and science", score: 4 },
+                    { text: "I enjoy analyzing team dynamics and financial outcomes", score: 1 },
+                    { text: "I like brainstorming ideas and discussing cultural topics", score: 2 }
+                ]
+            },
+            {
+                question: "What is your preferred method for assessing success?",
+                options: [
+                    { text: "By the effectiveness of a technological solution", score: 4 },
+                    { text: "By improvements in health or environmental outcomes", score: 2 },
+                    { text: "By financial growth and profitability", score: 3 },
+                    { text: "By cultural impact and social changes", score: 1 }
+                ]
+            },
+            {
+                question: "If you had to give a presentation, what topic would you choose?",
+                options: [
+                    { text: "The latest advancements in technology", score: 4 },
+                    { text: "A research project on a biological topic", score: 1 },
+                    { text: "Analyzing a recent economic trend", score: 3 },
+                    { text: "The significance of a historical event", score: 2 }
+                ]
+            },
+            {
+                question: "How do you prefer to express your ideas?",
+                options: [
+                    { text: "Through logical reasoning and data analysis", score: 3 },
+                    { text: "By discussing their relevance to health or science", score: 4 },
+                    { text: "By presenting financial implications", score: 1 },
+                    { text: "Through storytelling and cultural context", score: 2 }
+                ]
+            },
+            {
+                question: "Which skill do you value the most in yourself?",
+                options: [
+                    { text: "Critical thinking and problem-solving", score: 4 },
+                    { text: "Empathy and understanding human behavior", score: 1 },
+                    { text: "Analytical thinking in business scenarios", score: 2 },
+                    { text: "Creativity in expressing ideas", score: 3 }
+                ]
+            },
+            {
+                question: "How do you feel about career prospects in your chosen field?",
+                options: [
+                    { text: "Very optimistic about innovations and technology", score: 4 },
+                    { text: "Positive, especially in health and research areas", score: 1 },
+                    { text: "Confident in business and finance opportunities", score: 3 },
+                    { text: "Hopeful for cultural and social impact careers", score: 2 }
+                ]
+            },
+            {
+                question: "What kind of tasks do you enjoy doing the most?",
+                options: [
+                    { text: "Analytical tasks like programming or calculations", score: 1 },
+                    { text: "Hands-on tasks in biology or health sciences", score: 4 },
+                    { text: "Researching and analyzing financial data", score: 3 },
+                    { text: "Creative tasks like writing or creating art", score: 2 }
+                ]
+            },
+            {
+                question: "Which of these famous figures do you admire the most?",
+                options: [
+                    { text: "Albert Einstein (Physicist)", score: 4 },
+                    { text: "Marie Curie (Scientist)", score: 1 },
+                    { text: "Warren Buffet (Investor)", score: 3 },
+                    { text: "Mahatma Gandhi (Social Leader)", score: 2 }
+                ]
+            },
+            {
+                question: "How do you feel about taking risks in your studies?",
+                options: [
+                    { text: "I prefer calculated risks with potential innovations", score: 4 },
+                    { text: "I’m cautious but willing to explore new methods", score: 2 },
+                    { text: "I’m comfortable taking financial risks if I see potential", score: 3 },
+                    { text: "I avoid risks and prefer to stick to known topics", score: 1 }
+                ]
+            },
+            {
+                question: "What type of problems do you enjoy solving the most?",
+                options: [
+                    { text: "Technical problems involving technology", score: 4 },
+                    { text: "Problems related to health and biology", score: 1 },
+                    { text: "Economic problems and market analysis", score: 3 },
+                    { text: "Social issues and human behavior", score: 2 }
+                ]
+            },
+            {
+                question: "If you could change one aspect of society, what would it be?",
+                options: [
+                    { text: "Advancing technology for better living standards", score: 4 },
+                    { text: "Improving healthcare access for everyone", score: 1 },
+                    { text: "Promoting financial literacy among the youth", score: 3 },
+                    { text: "Enhancing cultural appreciation and understanding", score: 2 }
+                ]
+            },
+            {
+                question: "Which of these career paths appeals to you the most?",
+                options: [
+                    { text: "Software Developer or Engineer", score: 4 },
+                    { text: "Medical Practitioner or Researcher", score: 1 },
+                    { text: "Financial Analyst or Business Consultant", score: 3 },
+                    { text: "Teacher, Writer, or Cultural Researcher", score: 2 }
+                ]
+            },
+            {
+                question: "How do you prefer to receive feedback on your work?",
+                options: [
+                    { text: "Through constructive criticism focused on improvement", score: 4 },
+                    { text: "Through discussions about its impact on health or society", score: 1 },
+                    { text: "Through financial outcomes and success metrics", score: 3 },
+                    { text: "Through emotional and cultural insights", score: 2 }
+                ]
+            },
+            {
+                question: "What is your greatest strength?",
+                options: [
+                    { text: "Analytical thinking and logical reasoning", score: 4 },
+                    { text: "Empathy and understanding others", score: 1 },
+                    { text: "Financial acumen and business sense", score: 3 },
+                    { text: "Creativity and artistic expression", score: 2 }
+                ]
+            },
+            {
+                question: "If you had a choice, which event would you most like to attend?",
+                options: [
+                    { text: "A tech conference showcasing innovations", score: 4 },
+                    { text: "A health seminar or workshop", score: 1 },
+                    { text: "A finance or investment summit", score: 3 },
+                    { text: "A cultural festival celebrating diversity", score: 2 }
+                ]
+            },
+            {
+                question: "How do you feel about the role of technology in society?",
+                options: [
+                    { text: "It is essential for driving progress and innovation", score: 4 },
+                    { text: "It can improve healthcare and quality of life", score: 1 },
+                    { text: "It plays a crucial role in financial markets", score: 3 },
+                    { text: "It is important for preserving and promoting culture", score: 2 }
+                ]
+            },
+            {
+                question: "What’s your ideal way to contribute to society?",
+                options: [
+                    { text: "Through innovative solutions and technology", score: 4 },
+                    { text: "By improving health and wellbeing", score: 1 },
+                    { text: "By fostering economic growth and stability", score: 3 },
+                    { text: "By promoting social awareness and cultural understanding", score: 2 }
+                ]
+            },
+            {
+                question: "How do you view challenges in your academic life?",
+                options: [
+                    { text: "As opportunities to innovate and learn", score: 4 },
+                    { text: "As situations to understand health implications", score: 1 },
+                    { text: "As chances to evaluate financial strategies", score: 3 },
+                    { text: "As moments to reflect on social and cultural impacts", score: 2 }
+                ]
+            }
+            
+        ];
+
+        let currentQuestionIndex = 0;
+        let totalScore = 0;
+
+        const questionContainer = document.getElementById('question-container');
+        const questionElement = document.getElementById('question');
+        const optionsContainer = document.getElementById('options-container');
+        const nextButton = document.getElementById('next-button');
+        const resultContainer = document.getElementById('result-container');
+
+        function showQuestion() {
+            const currentQuestion = questions[currentQuestionIndex];
+            questionElement.textContent = currentQuestion.question;
+            optionsContainer.innerHTML = '';
+
+            currentQuestion.options.forEach(option => {
+                const button = document.createElement('button');
+                button.textContent = option.text;
+                button.classList.add('option');
+                button.addEventListener('click', () => selectOption(option.score));
+                optionsContainer.appendChild(button);
+            });
+        }
+
+        function selectOption(score) {
+            totalScore += score;
+            nextButton.style.display = 'block';
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+                nextButton.style.display = 'none';
+            } else {
+                showResult();
+            }
+        }
+        function showResult() {
+            questionContainer.style.display = 'none';
+            nextButton.style.display = 'none';
+            resultContainer.style.display = 'block';
+
+            let result;
+            if (totalScore >= 80 && totalScore <= 110) {
+                result = "You should consider pursuing Science (Non-Med).";
+            } else if (totalScore >= 60 && totalScore <= 79) {
+                result = "You should consider pursuing Science (Med).";
+            } else if (totalScore >= 40 && totalScore <= 59) {
+                result = "You should consider pursuing Commerce.";
+            } else if (totalScore >= 20 && totalScore <= 39) {
+                result = "You should consider pursuing Humanities.";
+            }
+            resultContainer.textContent = result;
+            const continueButton = document.createElement('button');
+            continueButton.textContent = "Continue";
+            continueButton.classList.add('next-button');
+            continueButton.onclick = () => window.location.href = 'homepage.html'; 
+            resultContainer.appendChild(continueButton);
+        }
+
+        showQuestion();
+    </script>
+</body>
+</html>

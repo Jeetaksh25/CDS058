@@ -1,0 +1,166 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 90%;
+    height: 10%;
+    margin: 0 auto;
+    padding: 35px;
+
+    
+}
+
+.container2 {
+   
+    height: 10%;
+    margin: 0 auto;
+    padding: 35px;
+
+    
+}
+
+.banner {
+    background: linear-gradient(90deg, #f39c12, #f1c40f);
+    color: rgb(245, 238, 238);
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.banner2 {
+    background: linear-gradient(90deg, #0a00cb, #f1c40f);
+    color: rgb(245, 238, 238);
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.banner .prize-winner {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.banner .quote {
+    margin: 10px 0;
+}
+
+.banner .shop-now {
+    background: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.book-section {
+    margin-top: 20px;
+}
+
+.book-section h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.book-carousel {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.book-item {
+    text-align: center;
+    min-width: 150px;
+    width: 2cm;
+}
+
+.book-item img {
+    width: 100%;
+    border-radius: 5px;
+    height: 200px;
+    object-fit: cover;
+    
+}
+
+.book-item p {
+    margin-top: 5px;
+    font-size: 1cmem;
+
+}
+
+.author {
+    color: gray;
+}
+
+.see-all {
+    display: inline-block;
+    margin-top: 10px;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+.university {
+    margin-top: 30px;
+}
+
+.university h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.uni-carousel {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.uni-item {
+    text-align: center;
+    min-width: 150px;
+    width: 10cm;
+    
+}
+
+.uni-item img {
+    width: 100%;
+    border-radius: 5px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.uni-item p {
+    margin-top: 5px;
+    font-size: 1.5em;
+}
+
+.book-item:hover {
+    transform: scale(1.05);
+    color: rgb(241, 140, 7);
+    transition: 0.7s;
+    -webkit-filter: drop-shadow(1px 1px 5px #0000003f);
+            filter: drop-shadow(0px 0px 10px #ffffff);
+}
+
+.uni-item:hover {
+    transform: scale(1.05);
+    color: rgb(241, 140, 7);
+    transition: 0.7s;
+    -webkit-filter: drop-shadow(1px 1px 5px #0000003f);
+            filter: drop-shadow(0px 0px 10px #ffffff);
+}
+
+.author:hover{
+    color: rgb(255, 255, 255);
+}
