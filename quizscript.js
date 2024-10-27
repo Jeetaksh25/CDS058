@@ -1,27 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="quizscript.js"></script>
-    <title>Stream Selection Quiz</title>
-
-
-</head>
-<body>
-    <div class="quiz-container" id="quiz-container">
-        <div class="question-container" id="question-container">
-            <h2 id="question"></h2>
-            <div class="options-container" id="options-container"></div>
-        </div>
-        <button id="next-button" onclick="nextQuestion()">Next</button>
-        <div class="result-container" id="result-container"></div>
-    </div>
-</body>
-</html>
-
-<script>
-    const questions = [
+const questions = [
     {
         question: "Which subject do you enjoy the most?",
         options: [
@@ -550,5 +527,3 @@ function showResult() {
 }
 
 showQuestion();
-
-</script>
